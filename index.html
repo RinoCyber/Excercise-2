@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tugas Kalkulator Sederhana dengan JavaScript</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="kalkulator">
+        <h2 class="judul">KALKULATOR</h2>
+        <a class="brand" href="https://www.sa13rinocyberzone.blogspot.com">Muhammad Sabrino Raharjo</a>
+        <form name="form1" action="#">
+            <input type="text" name="x" class="bil" autocomplete="off" placeholder="Masukkan Bilangan Pertama">
+            <input type="text" name="y" class="bil" autocomplete="off" placeholder="Masukkan Bilangan Kedua">
+            <select class="opt" name="opt">
+                <option value="tambah">+</option>
+                <option value="kurang">-</option>
+                <option value="kali">X</option>
+                <option value="bagi">/</option>
+            </select>
+            <input type="button" value="Hitung" class="tombol" onClick="hitung()" />
+            <input type="text" name="hasil" class="bil" />
+            <input type="button" value="Reset" onClick="resetForm()" class="tombol" />
+        </form>
+    </div>
+    <script>
+        function hitung() {
+            var myForm = document.form1;
+            var x = eval(myForm.x.value);
+            var y = eval(myForm.y.value);
+            var pil = myForm.opt.value;
+
+            if (pil == "tambah") {
+                var z = x + y;
+            } else if (pil == "kurang") {
+                var z = x - y;
+            } else if (pil == "kali") {
+                var z = x * y;
+            } else if (pil == "bagi") {
+                var z = x / y;
+            }
+            else {
+                var z = 0;
+            }
+            myForm.hasil.value = z;
+        }
+
+        function resetForm() {
+            document.form1.reset();
+        }
+
+    </script>
+</body>
+
+</html>
